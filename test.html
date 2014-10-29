@@ -1,0 +1,19 @@
+<script src="./curry.js"></script>
+<script>
+
+var sum = function(a, b) {
+  return a + b;
+};
+
+var sumX = (function(a, b, c) {
+  return a + b + c;
+}).curry();
+
+var sumCurry = sum.curry();
+var sum8 = sumCurry(8);
+console.log(sum8(2));
+console.log(sumCurry(8,2));
+console.log(sum8());
+console.log(sumX(1)(2)(3));
+
+</script>
